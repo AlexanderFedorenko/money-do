@@ -16,6 +16,10 @@ Metrics/LineLength:
     - 'config/initializers/**/*'
     - 'spec/**/*'
 
+Style/AsciiComments:
+  Exclude:
+    - 'config/initializers/money.rb'
+
 Style/BlockComments:
   Enabled: false
 
