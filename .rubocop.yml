@@ -28,3 +28,6 @@ Style/Documentation:
 
 Style/FrozenStringLiteralComment:
   EnforcedStyle: when_needed
+
+Style/SymbolArray:
+  MinSize: 5
