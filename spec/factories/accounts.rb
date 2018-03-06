@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :account do
     name 'MyString'
-    type ''
+    kind 'MyString'
     ancestry 'MyString'
     initial_balance ''
   end
