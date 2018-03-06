@@ -8,6 +8,10 @@ AllCops:
 Rails:
   Enabled: true
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 Metrics/LineLength:
   Max: 90
   Exclude:
@@ -25,6 +29,9 @@ Style/BlockComments:
 
 Style/Documentation:
   Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
 
 Style/FrozenStringLiteralComment:
   EnforcedStyle: when_needed
