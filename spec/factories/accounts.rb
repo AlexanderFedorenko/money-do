@@ -4,28 +4,28 @@ FactoryBot.define do
   factory :income_account, class: Account do
     name 'Income account'
     kind :income
-    ancestry ''
+    ancestry nil
     initial_balance 0
   end
 
   factory :expense_account, class: Account do
     name 'Expense account'
     kind :expense
-    ancestry ''
+    ancestry nil
     initial_balance 0
   end
 
   factory :storage_account, class: Account do
     name 'Storage account'
     kind :storage
-    ancestry ''
+    ancestry nil
     initial_balance 0
   end
 
   factory :debt_account, class: Account do
     name 'Debt account'
     kind :debt
-    ancestry ''
+    ancestry nil
     initial_balance 0
   end
 end

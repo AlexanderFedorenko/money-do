@@ -5,6 +5,8 @@ class Account < ApplicationRecord
 
   monetize :initial_balance_cents
 
+  has_ancestry orphan_strategy: :rootify
+
   validates :name, :kind, presence: true
   validates :initial_balance, numericality: true
 end
