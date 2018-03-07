@@ -3,6 +3,8 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :update, :destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
   # GET /accounts
   # GET /accounts.json
   def index
@@ -52,5 +54,9 @@ class AccountsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def account_params
     params.require(:account).permit(:name, :kind, :ancestry, :initial_balance)
+  end
+
+  def record_not_found
+    head :not_found
   end
 end
