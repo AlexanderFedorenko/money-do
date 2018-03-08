@@ -1,31 +1,28 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :income_account, class: Account do
-    name 'Income account'
-    kind :income
+  factory :account, class: Account do
     ancestry nil
     initial_balance 0
-  end
 
-  factory :expense_account, class: Account do
-    name 'Expense account'
-    kind :expense
-    ancestry nil
-    initial_balance 0
-  end
+    trait :income do
+      name 'Income account'
+      kind :income
+    end
 
-  factory :storage_account, class: Account do
-    name 'Storage account'
-    kind :storage
-    ancestry nil
-    initial_balance 0
-  end
+    trait :expense do
+      name 'Expense account'
+      kind :expense
+    end
 
-  factory :debt_account, class: Account do
-    name 'Debt account'
-    kind :debt
-    ancestry nil
-    initial_balance 0
+    trait :storage do
+      name 'Storage account'
+      kind :storage
+    end
+
+    trait :debt do
+      name 'Debt account'
+      kind :debt
+    end
   end
 end

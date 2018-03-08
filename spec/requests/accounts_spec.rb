@@ -8,19 +8,19 @@ RSpec.describe 'Accounts', type: :request do
   end
 
   let(:valid_params) do
-    attributes_for(:storage_account)
+    attributes_for(:account, :storage)
   end
 
   let(:invalid_params) do
-    { account: attributes_for(:storage_account, name: nil) }
+    { account: attributes_for(:account, :storage, name: nil) }
   end
 
   let(:existing_account) do
-    create(:income_account)
+    create(:account, :income)
   end
 
   let(:non_existing_account) do
-    build(:debt_account, id: 'bda1c21568c2-c788-bbc4-0ea7-2f557902')
+    build(:account, :debt, id: 'bda1c21568c2-c788-bbc4-0ea7-2f557902')
   end
 
   describe 'GET /accounts' do
@@ -40,8 +40,8 @@ RSpec.describe 'Accounts', type: :request do
 
     context 'when there are accounts created' do
       before do
-        create(:expense_account)
-        create(:income_account)
+        create(:account, :expense)
+        create(:account, :income)
 
         get accounts_path, headers: headers
       end
@@ -118,7 +118,7 @@ RSpec.describe 'Accounts', type: :request do
   describe 'PUT /accounts/:id' do
     context 'when account exists' do
       before(:all) do
-        create(:debt_account)
+        create(:account, :debt)
       end
       context 'with valid params' do
         subject do

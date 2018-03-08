@@ -4,10 +4,10 @@ require 'rails_helper'
 
 RSpec.describe Account, type: :model do
   it 'has valid factories' do
-    expect(FactoryBot.create(:income_account)).to be_valid
-    expect(FactoryBot.create(:expense_account)).to be_valid
-    expect(FactoryBot.create(:storage_account)).to be_valid
-    expect(FactoryBot.create(:debt_account)).to be_valid
+    expect(FactoryBot.create(:account, :income)).to be_valid
+    expect(FactoryBot.create(:account, :expense)).to be_valid
+    expect(FactoryBot.create(:account, :storage)).to be_valid
+    expect(FactoryBot.create(:account, :debt)).to be_valid
   end
 
   context 'validations' do
